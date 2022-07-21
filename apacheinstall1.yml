@@ -1,0 +1,55 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: i want to update ubuntu nodes
+    apt:
+      update_cache: yes
+    when: ansible_os_family == "Debian"
+  - name: i want to install webserver on ubuntu nodes
+    apt:
+     name: apache2
+     state: present
+    when: ansible_os_family == "Debian"
+  - name: i want to update ubuntu nodes
+    apt:
+      update_cache: yes
+    when: ansible_os_family == "Debian"
+  - name: i want to restart the webserver on ubuntu nodes
+    service:
+      name: apache2
+      state: restarted
+    when: ansible_os_family == "Debian"
+  - name: i want to uninstall the apache2 on ubuntu nodes
+    apt:
+     name: apache2
+     autoremove: yes
+     state: absent
+    when: ansible_os_family == "Debian"
+
+  - name: i want to update redhat nodes
+    yum:
+     update_cache: yes
+    when: ansible_os_family =="RedHat"
+  - name: i want to install webserver on redhat nodes
+    yum:
+     name: httpd
+     state: present
+    when: ansible_os_family =="RedHat"
+  - name: i want to start the webserver on redhat nodes
+    service:
+      name: httpd
+      state: started
+    when: ansible_os_family =="RedHat"
+  - name: i want to update redhat nodes
+    yum:
+     update_cache: yes
+    when: ansible_os_family =="RedHat"
+  - name: i want to uninstall the apache2 on redhat nodes
+    yum:
+     name: httpd
+     autoremove: yes
+     state: absent
+    when: ansible_os_family == "RedHat"
+  
+
