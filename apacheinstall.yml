@@ -5,7 +5,7 @@
   - name: i want to install webserver
     apt:
      name: apache2
-     status: present
+     state: present
   - name: i want to update
     apt:
       update_cache: yes
