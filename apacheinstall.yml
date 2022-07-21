@@ -5,24 +5,24 @@
   - name: i want to update
     apt:
       update_cache: yes
-    ansible_os_family": "Debian"
+    when: ansible_os_family == "Debian"
   - name: i want to install webserver
     apt:
      name: apache2
      state: present
-    ansible_os_family": "Debian"
+    when: ansible_os_family == "Debian"
   - name: i want to update
     apt:
       update_cache: yes
-    ansible_os_family": "Debian"
+    when: ansible_os_family == "Debian"
   - name: i want to restart the webserver
     service:
       name: apache2
       state: restarted
-    ansible_os_family": "Debian"
+    when: ansible_os_family == "Debian"
   - name: i want to uninstall the pache2
     apt:
      name: apache2
      autoremove: yes
      state: absent
-    ansible_os_family": "Debian"
+    when: ansible_os_family == "Debian"
