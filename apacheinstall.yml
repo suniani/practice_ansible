@@ -1,0 +1,15 @@
+---
+- hosts: 
+  become: yes
+  tasks:
+  - name: i want to install webserver
+    apt:
+     name: apache2
+     status: present
+  - name: i want to update
+    apt:
+      update_cache: yes
+  - name: i want to restart the webserver
+    service:
+      name: apache2
+      state: restarted
