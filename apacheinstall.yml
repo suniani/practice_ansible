@@ -16,3 +16,8 @@
     service:
       name: apache2
       state: restarted
+  - name: i want to uninstall the pache2
+    apt:
+     name: apache2
+     autoremove: yes
+     state: absent
