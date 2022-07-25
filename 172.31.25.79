@@ -1,2 +1,2 @@
 ---
-javapackageonubuntu: openjdk-9-jre
+javapackageonubuntu: default-jdk
