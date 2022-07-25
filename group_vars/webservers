@@ -1,3 +1,5 @@
 ---
 webserveronubuntu: apache2
 webserveronredhat: httpd
+javapackageonubuntu: openjdk-8-jdk
+javapackageonredhat: java-1.8.0-openjdk
