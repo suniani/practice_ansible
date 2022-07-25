@@ -4,23 +4,23 @@
   tasks:
   - name: i want to install java on ubuntu nodes
     apt:
-      name: openjdk-8-jdk
+      name: "{{javapackageonubuntu}}"
       state: present
     when: ansible_os_family == "Debian"
   - name: i want to uninstall java on ubuntu nodes
     apt:
-      name:  openjdk-8-jdk
+      name:  "{{javapackageonubuntu}}"
       state: absent
       autoremove: yes
     when: ansible_os_family == "Debian"
   - name: i want to install java on redhat nodes
     yum:
-      name: java-1.8.0-openjdk
+      name: "{{javapackageonredhat}}"
       state: present
     when: ansible_os_family =="RedHat"
   - name: i want to uninstall java on redhat nodes
     yum: 
-      name: java-1.8.0-openjdk
+      name: "{{javapackageonredhat}}"
       state: absent
       autoremove: yes
     when: ansible_os_family =="RedHat"
