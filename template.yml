@@ -18,7 +18,7 @@
   - name: download jenkins from internet into node
     get_url:
       url: https://get.jenkins.io/war-stable/2.332.3/jenkins.war
-      dest: /home/sunitha
+      dest: /home/sunitha/
   handlers:
     - name: restartwebserver
       service:
