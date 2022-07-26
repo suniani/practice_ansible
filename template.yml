@@ -10,6 +10,9 @@
     copy:
       src: staticfile.html
       dest: /var/www/html/index.html
+    notify: restartwebserver
+  - name: Flush handlers
+    meta: flush_handlers
   - name: copy dynamic file
     template:
       src: index.j2
@@ -19,6 +22,7 @@
     get_url:
       url: https://get.jenkins.io/war-stable/2.332.3/jenkins.war
       dest: /home/sunitha/
+      force_basic_auth: yes
   handlers:
     - name: restartwebserver
       service:
