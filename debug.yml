@@ -1,0 +1,20 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: i want to execute direct command
+    command: hostname -f
+    register: myresult
+  - name: i want to display the result
+    debug:
+     msg: "{{myresult}}"
+  - name: install git
+    apt:
+     name: git 
+     state: present
+    when: myresult.stderr == ""
+  - name: install tree
+    apt:
+     name: tree
+     state: present
+    when: myresult.stderr != ""
