@@ -1,0 +1,8 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: copy static file
+    copy:
+      src: staticfile.html
+      dest: /var/www/html/index.html
