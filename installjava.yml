@@ -7,12 +7,12 @@
       name: "{{javapackageonubuntu}}"
       state: present
     when: ansible_os_family == "Debian"
-  - name: i want to uninstall java on ubuntu nodes
-    apt:
-      name:  "{{javapackageonubuntu}}"
-      state: absent
-      autoremove: yes
-    when: ansible_os_family == "Debian"
+  #- name: i want to uninstall java on ubuntu nodes
+  #  apt:
+   #   name:  "{{javapackageonubuntu}}"
+   #   state: absent
+    #  autoremove: yes
+   # when: ansible_os_family == "Debian"
   - name: i want to install java on redhat nodes
     yum:
       name: "{{javapackageonredhat}}"
