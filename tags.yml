@@ -1,0 +1,28 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: i want to install and uninstall git
+    tags: installgit
+    block:
+    - name: i want to install git
+      apt:
+       name: git
+       state: present
+    - name: i want to uninstall git
+      apt:
+        name: git
+        autoremove: yes
+        state: absent
+  - name: i want to install and uninstall tree
+    tags: installtree
+    block:
+    - name: i want to install tree
+      apt:
+        name: tree
+        state: present
+    - name: i want to uninstall tree
+      apt:
+        name: tree
+        autoremove: yes
+        state: absent 
