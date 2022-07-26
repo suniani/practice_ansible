@@ -1,0 +1,26 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: Create a directory if it does not exist
+    file:
+      path: /home/sunitha/testfolder
+      owner: sunitha
+      group: sunitha
+      state: directory
+      mode: '0755'
+  - name: create a file
+    file:
+     path: /home/sunitha/testfolder/file1
+     owner: sunitha
+     group: sunitha
+     state: touch
+     mode: u=rw,g=r,o=r
+  - name: Remove file (delete file)
+    file:
+      path: /home/sunitha/testfolder/file1
+      state: absent
+  - name: Recursively remove directory
+    file:
+      path: /home/sunitha/testfolder
+      state: absent
