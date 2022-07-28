@@ -1,2 +1,3 @@
 ---
 # vars file for tomcatrole
+javapackage: openjdk-8-jdk

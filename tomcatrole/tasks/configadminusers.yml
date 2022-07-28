@@ -1,0 +1,13 @@
+---
+- name: defining the tomcat users
+  template:
+     src: templates/tomcatusers.j2
+     dest: /opt/tomcat/conf/tomcat-users.xml
+- name: removing the ip address restrictions for manager
+  template: 
+     src: templates/manager.j2
+     dest: /opt/tomcat/webapps/manager/META-INF/context.xml
+- name: removing the ip address restrictions for host manager
+  template: 
+     src: templates/hostmanager.j2
+     dest: /opt/tomcat/webapps/host-manager/META-INF/context.xml
