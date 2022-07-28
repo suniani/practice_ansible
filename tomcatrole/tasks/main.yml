@@ -7,5 +7,6 @@
 - include_tasks: configadminusers.yml
 - include_tasks: tomcatservice.yml
 - include_tasks: tomcatstart.yml
-- include_tasks: deployjava.yml
-- include_tasks: restarttomcat.yml
+#- include_tasks: deployjava.yml
+#- include_tasks: restarttomcat.yml
+- include_tasks: memoryadd.yml
