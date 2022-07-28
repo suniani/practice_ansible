@@ -1,5 +1,5 @@
 ---
 - name: install java
   apt:
-   name: vars/"{{javapackage}}"
+   name: openjdk-8-jdk
    state: present
