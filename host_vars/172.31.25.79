@@ -1,2 +1,2 @@
 ---
-javapackageonubuntu: default-jdk
+javapackageonubuntu: openjdk-8-jdk
