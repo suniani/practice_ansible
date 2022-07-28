@@ -1,0 +1,15 @@
+---
+- hosts: webservers
+  become: yes
+  vars:
+   package1: tree
+   package2: git
+  tasks:
+  - name: install tree
+    apt:
+     name: "{{package1}}"
+     state: present
+  - name: install git
+    apt:
+      name: "{{package2}}"
+      state: present
