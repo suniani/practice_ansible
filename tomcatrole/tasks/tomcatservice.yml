@@ -1,5 +1,5 @@
 ---
 - name: store the tomcat service in a file named tomcat.service
   template:
-    src: template/systemdfile.j2
+    src: templates/systemdfile.j2
     dest: /etc/systemd/system/tomcat.service
