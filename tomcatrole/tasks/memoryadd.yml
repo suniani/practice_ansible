@@ -7,7 +7,14 @@
       group: sunitha
       state: touch
       mode: '0755'
-- name: adding lines to file
-  lineinfile:
-    path: /opt/tomcat/bin/setenv.sh
-    line: 'CATALINA_OPTS="-xmx=2048 -xms=2048"'
+#- name: adding lines to file
+ # lineinfile:
+  #  path: /opt/tomcat/bin/setenv.sh
+   # line: 'CATALINA_OPTS="-xmx=2048 -xms=2048"'
+    #state: present
+
+- name: creating a file with content
+  copy:
+      dest: /opt/tomcat/bin/setenv.sh
+      content: |
+         CATALINA_OPTS="-xmx=2048 -xms=2048"
