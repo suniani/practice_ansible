@@ -1,12 +1,11 @@
 ---
 - name: create file
   file:
-    file:
-      path: /opt/tomcat/bin/setenv.sh
-      owner: sunitha
-      group: sunitha
-      state: touch
-      mode: '0755'
+     path: /opt/tomcat/bin/setenv.sh
+     owner: sunitha
+     group: sunitha
+     state: touch
+     mode: '0755'
 #- name: adding lines to file
  # lineinfile:
   #  path: /opt/tomcat/bin/setenv.sh
